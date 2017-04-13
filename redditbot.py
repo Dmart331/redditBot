@@ -1,28 +1,20 @@
 import praw
 
-reddit = praw.Reddit("bot1" , user_agent='Drew Martin', password="shitghost2")
+reddit = praw.Reddit(client_id="5NIELuR-oCvjtA",
+                     client_secret="WqI5sOGwlVrnUw2bDHpOSU0_RaY",
+                     user_agent="Def Bot 0.1")
+    # client_id= "5NIELuR-oCvjtA",
+# client_secret= "WqI5sOGwlVrnUw2bDHpOSU0_RaY",
+# username= "_Def__Bot_" ,
+# password= "shitghost2",
+# user_agent= "Def Bot 0.1")
 
-words_to_match = ['definately', 'definatly', 'definetly']
-cache = []
+subreddit = reddit.subreddit("learnpython")
 
-def run_bot():
-    subreddit = [reddit.subreddit('space') ]  
-    comments = []
-    for submission in subreddit:
-        print(submission.title)  # Output: the submission's title
-        print(submission.id)     # Output: the submission's ID
-        print(submission.url) 
-    
-        comments = [submission.comments]
+print(reddit.read_only)
 
-    for comment in comments: 
-        comment_text = comment
-        isMatch = any(comment_text for string in words_to_match)
-
-        if isMatch:
-            comment.reply('I think you meant to say "definitely"')
-            cache.append(comment.id)
-
-while True:
-    run_bot()
-    time.sleep(10)
+for submission in reddit.subreddit('learnpython').hot(limit=10):
+    print(submission.title)
+# print(subreddit.display_name)
+# print(subreddit.title)
+# print(subreddit.descrpition)
