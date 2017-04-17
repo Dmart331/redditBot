@@ -13,13 +13,13 @@ else:
 		posts_replied_to = posts_replied_to.split("\n")
 		posts_replied_to = list(filter(None, posts_replied_to))
 
-subreddit = reddit.subreddit('pythonforengineers')
+subreddit = reddit.subreddit('futurology')
 
 for submission in subreddit.hot(limit=5):
 	if submission.id not in posts_replied_to:
-		if re.search("i love python", submission.title, re.IGNORECASE):
-			submission.reply("*BLeeP BloOp* Me Too!")
-			print("Bot replying to : ", submission.title)
+		if re.search('definitely', submission.comments):
+			submission.reply("*BLeeP BloOp* I think you meant defanately!")
+			print("Bot replying to : ", submission.comment.username)
 			posts_replied_to.append(submission.id)
 			with open('posts_replied_to.txt', 'w') as f:
 				for post_id in posts_replied_to:
