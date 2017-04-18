@@ -8,7 +8,7 @@ _Def__Bot_ was created to make me laugh. Its only job is to collect comments as 
 - Navigate to  preferences
 - Click 'Apps'
 - Create new script app
-- Replace my Client ID and Secret Key
+- Replace my Client ID and Secret Key in the praw.ini file
 - Run Bot with ```python reply_post.py```
 
 
