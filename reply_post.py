@@ -71,5 +71,5 @@ if __name__ == '__main__':
 
     while True:
         do_the_thing()
-        time.sleep(500)
+        time.sleep(5000)
                     
